@@ -8,7 +8,9 @@
 
 let lightColor = "red";
 let lastSwitchedTime = 0;
-
+let greenDuration = 4000;
+let redDuration = 4000;
+let yellowDuration = 1000;
 
 function setup() {
   createCanvas(600, 600);
@@ -16,8 +18,24 @@ function setup() {
 
 function draw() {
   background(255);
+  updateLightState();
   drawOutlineOfLights();
   showCorrectLight();
+}
+
+function updateLightState() {
+  if (lightColor === "red" && millis() > lastSwitchedTime + redDuration) {
+    lightColor = "green";
+    lastSwitchedTime = millis();
+  }
+  else if (lightColor === "green" && millis() > lastSwitchedTime + greenDuration) {
+    lightColor = "yellow";
+    lastSwitchedTime = millis();
+  }
+  else if (lightColor === "yellow" && millis() > lastSwitchedTime + yellowDuration) {
+    lightColor = "red";
+    lastSwitchedTime = millis();
+  }
 }
 
 function drawOutlineOfLights() {
@@ -38,14 +56,12 @@ function showCorrectLight() {
     fill("red");
     ellipse(width/2, height/2 - 65, 50, 50); //top
   }
-
-  else if (lightColor === "yellow") {
-    fill("yellow");
-    ellipse(width/2, height/2, 50, 50); //middle
-  }
-
   else if (lightColor === "green") {
     fill("green");
     ellipse(width/2, height/2 + 65, 50, 50); //bottom
+  }
+  else if (lightColor === "yellow") {
+    fill("yellow");
+    ellipse(width/2, height/2, 50, 50); //middle
   }
 }
