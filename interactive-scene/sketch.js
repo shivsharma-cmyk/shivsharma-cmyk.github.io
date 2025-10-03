@@ -1,10 +1,11 @@
 // Project Title
+//Ball Catch
 // Your Name
+//Shivansh Sharma
 // Date
-//
+//10/3/2025
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
-
 
 
 let xPos = 200;
@@ -23,14 +24,14 @@ function setup() {
 
 function draw(){
   if (gameState === "start") {
-    background("blue");
+    background("lightblue");
     showButton();
     showText();
     showInstruction();
   }
   
   if (gameState === "ball") {
-    background(220);
+    background("white");
     noStroke();
     showCircle();
     ballDrop();
@@ -41,7 +42,7 @@ function draw(){
 }  
     
 function showCircle(){
-  fill(0,0,255);
+  fill("lightblue");
   circle(xPos, yPos += speed, 50);  
 }
 
@@ -94,12 +95,12 @@ function showText() {
   textStyle(BOLDITALIC);
   fill("black");
   text("Start", width/3.5, 225);
-  text("Ball Catch", width/20, height/4)
+  text("Ball Catch", width/20, height/4);
 }
 function showInstruction(){
-  textSize(20);
+  textSize(25);
   textStyle(BOLDITALIC);
   fill("black");
-  text("Use mouse to control slider to catch the balls",
-      0, 350);
+  text("Use mouse to control slider \n      to catch the balls",
+    width/10, 350);
 }
