@@ -7,84 +7,83 @@
 
 
 
-let x;
-let y;
-let dx; //or use xSpeed
-let dy;
-let r;
-let g;
-let b;
-let radius = 75;
-let rectx = 100;
-let recty = 150;
+let xPos = 200;
+let yPos = 0;
+let speed = 5;
+let score = 0;
+let rectX = 100;
+let rectY = 150;
 let w = 200;
 let h = 100;
 let gameState = "start";
 
 function setup() {
   createCanvas(400, 400);
-  noStroke();
-  x = width/2;
-  y = height/2;
-  dx = random(-3, 3);
-  dy = random(-3, 3);
-  randomizeColor();
 }
 
-function draw() {
+function draw(){
   if (gameState === "start") {
     background("blue");
     showButton();
     showText();
+    showInstruction();
   }
   
   if (gameState === "ball") {
-    background("red");
-    moveCircle();
-    bounceIfNeeded();
+    background(220);
+    noStroke();
     showCircle();
-    // console.log(y);
+    ballDrop();
+    ballPoint();
+    scoreText();
+    rectBox();
+  }
+}  
+    
+function showCircle(){
+  fill(0,0,255);
+  circle(xPos, yPos += speed, 50);  
+}
+
+function ballDrop(){
+  if (yPos > height){
+    yPos = 0;
+    xPos = random(width);
+    speed -= 1; 
+  }
+}  
+
+function ballPoint(){
+  if (dist(xPos, yPos, mouseX, 350)< 25){
+    yPos = 0;
+    xPos = random(width);
+    speed += 1;
+    score += 1;
   }
 }
 
-function moveCircle() {
-  x = x + dx;
-  y += dy;
+function scoreText(){
+  textSize(25);
+  text("Score:", 25, 50);
+  text(score, 100, 50);
 }
 
-function bounceIfNeeded() {
-  //should i bounce?
-  if (x < 0 + radius || x > width - radius) {
-    dx = dx * -1;
-    randomizeColor();
-  }
-  if (y < 0 + radius || y > height - radius) {
-    dy = dy * -1;
-    randomizeColor();
-  }
-}
-
-function randomizeColor() {
-  r = random(255);
-  g = random(255);
-  b = random(255);
-}
-
-function showCircle() {
-  fill(r, g, b);
-  circle(x, y, radius*2);
-}
+function rectBox(){
+  rectMode(CENTER);
+  rect(mouseX,350, 100, 25);
+}  
 
 function showButton() {
   fill("white");
-  rect(rectx, recty, w, h);
-  
+  rect(rectX, rectY, w, h);
 }
 
 function mousePressed() {
   if (gameState === "start") {
-    if (mouseX >= rectx && mouseX <= rectx + w && 
-        mouseY >= recty && mouseY <= recty + h) {
+    if (mouseX >= rectX && 
+        mouseX <= rectX + w &&
+        mouseY >= rectY && 
+        mouseY <= rectY + h) {
       gameState = "ball";
     }
   }
@@ -95,5 +94,12 @@ function showText() {
   textStyle(BOLDITALIC);
   fill("black");
   text("Start", width/3.5, 225);
-  text("F1", width/2.5, height/4);
+  text("Ball Catch", width/20, height/4)
+}
+function showInstruction(){
+  textSize(20);
+  textStyle(BOLDITALIC);
+  fill("black");
+  text("Use mouse to control slider to catch the balls",
+      0, 350);
 }
