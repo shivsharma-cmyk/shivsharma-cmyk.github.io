@@ -31,7 +31,7 @@ function draw(){
   }
   
   if (gameState === "ball") {
-    background("white");
+    background("gray");
     noStroke();
     showCircle();
     ballDrop();
