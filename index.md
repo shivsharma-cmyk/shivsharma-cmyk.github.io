@@ -2,6 +2,7 @@
 ## Demos
 - [Traffic Lights](traffic-lights)
 - [Bouncing Balls](bouncing-balls)
+- [Generative Art](generative-art)
 
 
 ## Assignments
