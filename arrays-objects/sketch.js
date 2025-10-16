@@ -22,6 +22,8 @@ function setup() {
 
 function draw() {
   background(220);
+}
 
-  rect(windowWidth/2, windowHeight/2, blockWidth, blockheight);
+function spawnRectangle(){
+  rect(windowWidth/2, windowHeight/2 , blockWidth, blockheight);
 }
