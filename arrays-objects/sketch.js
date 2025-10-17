@@ -18,12 +18,19 @@ function setup() {
   r = random(255);
   g = random(255);
   b = random(255);
+  
 }
 
 function draw() {
   background(220);
+  spawnRectangle();
 }
 
-function spawnRectangle(){
-  rect(windowWidth/2, windowHeight/2 , blockWidth, blockheight);
+function spawnRectangle() {
+  fill("black");
+  rect(windowWidth/2, windowHeight - blockheight, blockWidth, blockheight);
+}
+
+function dropRectangle() {
+  
 }
