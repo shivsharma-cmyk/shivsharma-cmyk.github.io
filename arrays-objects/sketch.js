@@ -9,10 +9,10 @@
 
 const blockWidth = 300;
 const blockheight = 30;
-let rectX = 100;
-let rectY = 150;
-let w = width/2;
-let h = height/2;
+let rectX = 450;
+let rectY = 200;
+let w = 200;
+let h = 100;
 let gameState = "start";
 let r;
 let g;
@@ -49,6 +49,11 @@ function dropRectangle() {
   
 }
 
+function showButton() {
+  fill("white");
+  rect(rectX, rectY, w, h);
+}
+
 function mousePressed() {
   if (gameState === "start") {
     if (mouseX >= rectX && 
@@ -60,18 +65,13 @@ function mousePressed() {
   }
 }
 
-function showButton() {
-  fill("white");
-  rect(rectX, rectY, w, h);
-}
-
 //Title and start text for the start screen
 function showText() {
   textSize(75);
   textStyle(BOLDITALIC);
   fill("black");
-  text("Start", width/3.5, 225);
-  text("Block Stack", width/2, height/2);
+  text("Start", width/2.5, 450);
+  text("Block Stack", width/3, 200);
 }
 
 //Text for the instruction on the start screen
@@ -80,5 +80,5 @@ function showInstruction(){
   textStyle(BOLDITALIC);
   fill("black");
   text("Use the arrow keys to \n stack the blocks to the top",
-    width/10, 350);
+    width/2.5, 700);
 }
