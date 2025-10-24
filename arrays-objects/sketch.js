@@ -9,10 +9,10 @@
 
 const blockWidth = 300;
 const blockheight = 30;
-let rectX = 450;
-let rectY = 200;
-let w = 200;
-let h = 100;
+let rectX = 760;
+let rectY = 350;
+let w = 250;
+let h = 125;
 let gameState = "start";
 let r;
 let g;
@@ -28,7 +28,7 @@ function setup() {
 
 function draw() {
   if (gameState === "start") {
-    background("lightblue");
+    background("turquoise");
     showButton();
     showText();
     showInstruction();
@@ -67,7 +67,7 @@ function mousePressed() {
 
 //Title and start text for the start screen
 function showText() {
-  textSize(75);
+  textSize(100);
   textStyle(BOLDITALIC);
   fill("black");
   text("Start", width/2.5, 450);
@@ -76,9 +76,9 @@ function showText() {
 
 //Text for the instruction on the start screen
 function showInstruction(){
-  textSize(25);
+  textSize(50);
   textStyle(BOLDITALIC);
   fill("black");
-  text("Use the arrow keys to \n stack the blocks to the top",
-    width/2.5, 700);
+  text("Use the arrow keys to stack the blocks to the top",
+    width/5, 700);
 }
