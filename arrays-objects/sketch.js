@@ -78,7 +78,8 @@ function showButtons() {
     drawButton(250, 450, "ROCK 🪨");
     drawButton(400, 450, "PAPER 📄");
     drawButton(550, 450, "SCISSORS ✂️");
-  } else {
+  } 
+  else {
     fill(255);
     rectMode(CENTER);
     rect(width / 2, 450, 200, 60, 15);
@@ -120,7 +121,8 @@ function checkMouseClick() {
         player.choice = "scissors";
         playRound();
       }
-    } else {
+    } 
+    else {
       // Restart button clicked
       if (mouseX > width / 2 - 100 && mouseX < width / 2 + 100 && mouseY > 420 && mouseY < 480) {
         resetGame();
@@ -136,14 +138,16 @@ function playRound() {
 
   if (player.choice === computer.choice) {
     result = "It's a tie!";
-  } else if (
+  } 
+  else if (
     (player.choice === "rock" && computer.choice === "scissors") ||
     (player.choice === "paper" && computer.choice === "rock") ||
     (player.choice === "scissors" && computer.choice === "paper")
   ) {
     result = "You win this round!";
     player.score++;
-  } else {
+  } 
+  else {
     result = "Computer wins this round!";
     computer.score++;
   }
@@ -155,7 +159,8 @@ function playRound() {
   if (player.score >= 10) {
     message = "🎉 You won the game! 🎉";
     gameOver = true;
-  } else if (computer.score >= 10) {
+  } 
+  else if (computer.score >= 10) {
     message = "💻 Computer won the game! 💻";
     gameOver = true;
   }
