@@ -4,9 +4,24 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: lightseagreen;
+    height: 100vh;
+    font-family: Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .board {
     width: 320px;
     height: 320px;
     background-image: url(grid.png);
     background-size: cover;
+    border-radius: 3rem;
+    box-shadow: 0 0 15px 5px rgba(50, 50, 50, 0.5);
+}
+
+.board:hover {
+    cursor: pointer;
 }
