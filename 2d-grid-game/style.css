@@ -44,3 +44,25 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+#result {
+  width: 200px;
+  height: 2rem;
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+}
+
+button {
+  background-color: yellowgreen;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: 1.5rem;
+  padding: 0.7rem 1rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: green;
+}
