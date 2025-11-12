@@ -62,7 +62,8 @@ function drawMarkers() {
 
       if (boardData[row][col] === 1) {
         cell.classList.add("cross");  
-      } else if (boardData[row][col] === -1) {
+      } 
+      else if (boardData[row][col] === -1) {
         cell.classList.add("circle"); 
       }
     }
@@ -78,21 +79,33 @@ function checkResult() {
     const rowSum = boardData[i][0] + boardData[i][1] + boardData[i][2];
     const colSum = boardData[0][i] + boardData[1][i] + boardData[2][i];
 
-    if (rowSum === 3 || colSum === 3) winner = 1;
-    else if (rowSum === -3 || colSum === -3) winner = 2;
+    if (rowSum === 3 || colSum === 3) {
+      winner = 1;
+    }
+    else if (rowSum === -3 || colSum === -3) {
+      winner = 2;
+    }
   }
 
   
   const diag1 = boardData[0][0] + boardData[1][1] + boardData[2][2];
   const diag2 = boardData[0][2] + boardData[1][1] + boardData[2][0];
 
-  if (diag1 === 3 || diag2 === 3) winner = 1;
-  else if (diag1 === -3 || diag2 === -3) winner = 2;
+  if (diag1 === 3 || diag2 === 3) {
+    winner = 1;
+  }
+  else if (diag1 === -3 || diag2 === -3) {
+    winner = 2;
+  }
 
   
-  if (!winner && boardData.flat().every(cell => cell !== 0)) winner = 0;
+  if (!winner && boardData.flat().every(cell => cell !== 0)) {
+    winner = 0;
+  }
 
-  if (winner !== null) endGame(winner);
+  if (winner !== null) {
+    endGame(winner);
+  }
 }
 
 
@@ -105,8 +118,12 @@ function updateResultText() {
 
 function endGame(win) {
   gameOver = true;
-  if (win === 0) resultElement.innerText = "It's a tie!";
-  else resultElement.innerText = `Player ${win === 1 ? "X" : "O"} wins!`;
+  if (win === 0) {
+    resultElement.innerText = "It's a tie!";
+  }
+  else {
+    resultElement.innerText = `Player ${win === 1 ? "X" : "O"} wins!`;
+  }
 }
 
 

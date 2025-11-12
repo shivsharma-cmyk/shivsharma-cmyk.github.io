@@ -10,6 +10,7 @@
 - [Rectangle Neighbours Demo](neighbours)
 - [Game of life](game-of-life)
 - [Charcater](character)
+- [Basic OOP](basic-oop)
 
 
 ## Assignments
