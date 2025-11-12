@@ -74,7 +74,6 @@ function drawMarkers() {
 function checkResult() {
   winner = null;
 
-  
   for (let i = 0; i < 3; i++) {
     const rowSum = boardData[i][0] + boardData[i][1] + boardData[i][2];
     const colSum = boardData[0][i] + boardData[1][i] + boardData[2][i];
@@ -87,7 +86,6 @@ function checkResult() {
     }
   }
 
-  
   const diag1 = boardData[0][0] + boardData[1][1] + boardData[2][2];
   const diag2 = boardData[0][2] + boardData[1][1] + boardData[2][0];
 
@@ -97,12 +95,9 @@ function checkResult() {
   else if (diag1 === -3 || diag2 === -3) {
     winner = 2;
   }
-
-  
   if (!winner && boardData.flat().every(cell => cell !== 0)) {
     winner = 0;
   }
-
   if (winner !== null) {
     endGame(winner);
   }
