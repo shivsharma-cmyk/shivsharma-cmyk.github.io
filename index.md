@@ -11,6 +11,7 @@
 - [Game of life](game-of-life)
 - [Charcater](character)
 - [Basic OOP](basic-oop)
+- [Walker OOP](walker-oop)
 
 
 ## Assignments
