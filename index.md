@@ -12,6 +12,7 @@
 - [Charcater](character)
 - [Basic OOP](basic-oop)
 - [Walker OOP](walker-oop)
+- [Firework OOP](firework-oop)
 
 
 ## Assignments
