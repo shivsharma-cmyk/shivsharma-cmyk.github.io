@@ -14,6 +14,7 @@
 - [Walker OOP](walker-oop)
 - [Firework OOP](firework-oop)
 - [Nodes OOP](nodes-oop)
+- [OOP Inheritance](inheritance)
 
 
 ## Assignments
