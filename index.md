@@ -15,6 +15,7 @@
 - [Firework OOP](firework-oop)
 - [Nodes OOP](nodes-oop)
 - [OOP Inheritance](inheritance)
+- [Shape Inheritance](shape-inheritance)
 
 
 ## Assignments
